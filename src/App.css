@@ -34,3 +34,21 @@ ul {
 button {
   margin-right: 10px;
 }
+
+#add-todo {
+  background-color: aqua;
+  border-radius: 20px;
+}
+
+#new-task-title {
+  color: black;
+  display: block;
+}
+
+#new-task, #submit-new-task {
+  margin-bottom: 20px;
+}
+
+#new-task {
+  width: 60%;
+}
