@@ -38,6 +38,8 @@ button {
 #add-todo {
   background-color: aqua;
   border-radius: 20px;
+  width: 80%;
+  margin: auto;
 }
 
 #new-task-title {
@@ -51,4 +53,5 @@ button {
 
 #new-task {
   width: 60%;
+  margin-right: 5px;
 }
