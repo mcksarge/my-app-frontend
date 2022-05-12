@@ -1,27 +1,24 @@
+import TaskCard from './TaskCard';
 
+function Task({tasks}){
 
-function Item(){
-    let array = ["Do chores", "Pick up mail", "Wash Dishes", "Clean car", "Ice my feet"]
+    
+    let allTasks = tasks.map((task, i) => {
 
-    function handleComplete(e){
-        console.log("You completed me!")
-    }
+        return (
+            <TaskCard 
+            key={i}
+            name={task.name}
+        />
+        )
 
-    let list = array.map((task) =>
-        <div>
-            <li>{task}</li>
-            <button class="complete-btn" onClick={handleComplete}>Complete</button>
-            <button class="delete-btn">Delete</button>
-            <hr></hr>
-        </div> 
-
-    )
-
+    })
+    
     return (
         <div id="task-list">
-            {list}
+            {allTasks}
         </div>
     )
 }
 
-export default Item;
+export default Task;

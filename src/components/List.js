@@ -1,12 +1,14 @@
-import ToDo from './ToDo'
 import AddToDo from './AddToDo'
+import Task from './Task'
 
-function List(){
+function List({tasks}){
+    
+    
     return(
         <div id="list-container">
             <h2 class="list-title">Today</h2>
             <AddToDo />
-            <ToDo />
+            <Task tasks={tasks} />
         </div>
 
         
