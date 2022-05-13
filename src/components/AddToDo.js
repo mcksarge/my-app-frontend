@@ -1,10 +1,25 @@
 import {useState} from "react";
 
-function AddToDo() {
+function AddToDo({onAddTask}) {
     const [newToDo, setNewToDo] = useState("")
 
     function handleSubmit(e){
         e.preventDefault();
+        
+        fetch("http://localhost:9292/tasks", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: newToDo
+            }),
+        })
+            .then((res) => res.json())
+            .then((task) => {
+                onAddTask(task)
+                setNewToDo("")
+            })
     }
 
     function handleChange(e) {

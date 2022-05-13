@@ -25,13 +25,23 @@ function App() {
       .then((people) => console.log(people))
   }, [])
 
+  function handleAddTask(newTask){
+    setTaskData([...taskData, newTask])
+  }
+
+  function handleDeleteTask(deletedTask){
+    const updatedTasks = taskData.filter((task) => task.id !== deletedTask)
+    setTaskData(updatedTasks)
+    setRefTask(true)
+  }
+
   
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>What To Do...</h1>
-        <List tasks={taskData} />
+        <List tasks={taskData} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} />
       </header>
     </div>
   );

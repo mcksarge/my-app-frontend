@@ -1,14 +1,18 @@
 
 
-function ToDo(props){
-    const {name} = props
+function ToDo({name, onDeleteTask}){
+    // const {name, onDeleteTask} = props
 
     function handleComplete(e){
         console.log("You completed me!")
     }
 
-    function handleDelete(e){
-        console.log("You deleted me!")
+    function handleDelete(){
+        fetch("http://localhost:9292/tasks/:id", {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((deletedTask) => onDeleteTask(deletedTask))
     }
 
     return (
