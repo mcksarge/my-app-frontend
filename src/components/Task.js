@@ -7,8 +7,8 @@ function Task({tasks, onDeleteTask}){
         return (
             <TaskCard 
             key={i}
-            name={task.name}
-            onDeletedTask={onDeleteTask}
+            task={task}
+            onDeleteTask={onDeleteTask}
         />
         )
 
