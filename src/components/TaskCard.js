@@ -1,7 +1,9 @@
-
+import {useState} from 'react';
 
 function ToDo({task, onDeleteTask}){
-    // const {name, onDeleteTask} = props
+    let {formData, setFormData} = useState("")
+    let {updateTask, setUpdateTask} = useState(false)
+
 
     function handleComplete(e){
         console.log("You completed me!")
@@ -19,9 +21,16 @@ function ToDo({task, onDeleteTask}){
     }
     /******************************************** */
 
+
+
     return (
         <div>
             <li class="task-list-item">{task.name}</li>
+            <select class="assinged-to">
+                <option value="amy">Amy</option>
+                <option value="shane">Shane</option>
+                <option value="nick">Nick</option>
+            </select>
             <button class="complete-btn" onClick={handleComplete}>Complete</button>
             <button class="delete-btn" onClick={handleDelete}>Delete</button>
             <hr></hr>
