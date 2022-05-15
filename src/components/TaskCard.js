@@ -1,8 +1,7 @@
 import {useState} from 'react';
 
-function ToDo({task, onDeleteTask}){
-    let {formData, setFormData} = useState("")
-    let {updateTask, setUpdateTask} = useState(false)
+function ToDo({task, onDeleteTask, people, categories}){
+
 
 
     function handleComplete(e){
@@ -20,16 +19,22 @@ function ToDo({task, onDeleteTask}){
             console.log(task.id)
     }
     /******************************************** */
+    let catName = ""
 
+    for (let i = 0; i < categories.length; i++){
+        if (categories[i].id === task.category_id){
+            catName = categories[i].name
+        }
+    }
 
 
     return (
         <div>
             <li class="task-list-item">{task.name}</li>
+            <li class="task-list-category">Category: {catName}</li>
             <select class="assinged-to">
-                <option value="amy">Amy</option>
-                <option value="shane">Shane</option>
-                <option value="nick">Nick</option>
+                <option value="Assign to">--- Assign to ---</option>
+                {people.map((person) => <option key={person.id} value={person.name}>{person.name}</option>)}
             </select>
             <button class="complete-btn" onClick={handleComplete}>Complete</button>
             <button class="delete-btn" onClick={handleDelete}>Delete</button>

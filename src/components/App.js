@@ -7,8 +7,12 @@ function App() {
   let [refTask, setRefTask] = useState(true)
   let [peopleData, setPeopleData] = useState([])
   let [refPeople, setRefPeople] = useState(true)
+  let [categoryData, setCategoryData] = useState([])
+  let [refCategory, setRefCategory] = useState(true)
 
   //Use Effects for rendering page
+
+  //Import tasks
   useEffect(() => {
     fetch("http://localhost:9292/tasks")
       .then((res) => res.json())
@@ -19,12 +23,32 @@ function App() {
         }
       })
   }, [refTask])
+/***************************** */
 
+//Import people
   useEffect(() => {
     fetch("http://localhost:9292/people")
       .then((res) => res.json())
-      .then((people) => console.log(people))
-  }, [])
+      .then((people) => {
+        if (refPeople === true){
+          setPeopleData(people)
+          setRefPeople(false)
+        }
+      })
+  }, [refPeople])
+  /**************************** */
+
+  //Import categories
+  useEffect(() => {
+    fetch("http://localhost:9292/categories")
+      .then((res) => res.json())
+      .then(categories => {
+        if (refCategory === true){
+          setCategoryData(categories)
+          setRefCategory(false)
+        }
+      })
+  }, [refCategory])
   /***************************** */
 
   //Passed down as prop to AddToDo to update state after task creation
@@ -51,7 +75,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>What To Do...</h1>
-        <List tasks={taskData} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} />
+        <List tasks={taskData} categories={categoryData} people={peopleData} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} />
       </header>
     </div>
   );

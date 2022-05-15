@@ -1,6 +1,6 @@
 import TaskCard from './TaskCard';
 
-function Task({tasks, onDeleteTask}){
+function Task({tasks, onDeleteTask, people, categories}){
 
     
     let allTasks = tasks.map((task, i) => {
@@ -9,6 +9,8 @@ function Task({tasks, onDeleteTask}){
             key={i}
             task={task}
             onDeleteTask={onDeleteTask}
+            people={people}
+            categories={categories}
         />
         )
 

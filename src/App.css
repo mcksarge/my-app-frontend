@@ -15,6 +15,7 @@
 
 .task-list-item {
   list-style: none;
+  font-size: 30px;
 }
 
 #list-container {
@@ -54,4 +55,23 @@ button {
 #new-task {
   width: 60%;
   margin-right: 5px;
+}
+
+.assigned-to {
+  margin-right: 10px;
+}
+
+.complete-btn {
+  margin-left: 10px;
+}
+
+.category-select {
+  margin-bottom: 10px;
+  display: flexbox;
+}
+
+.task-list-category {
+  list-style: none;
+  color: yellow;
+  font-size: 20px;
 }
