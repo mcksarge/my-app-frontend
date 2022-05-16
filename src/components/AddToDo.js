@@ -32,7 +32,6 @@ function AddToDo({onAddTask, categories}) {
             ...formData,
             [e.target.name]: e.target.value
         })
-        console.log(formData.category)
     }
     /******************************** */
 
@@ -43,7 +42,7 @@ function AddToDo({onAddTask, categories}) {
                 <input id="new-task" type="text" name="name" placeholder="Enter a task..." value={formData.name} onChange={handleChange}></input>
                 <input id="submit-task" type="submit" value="Submit" ></input>
                 <select name ="category" class="category-select" onChange={handleChange}>
-                    <option value="Select a category">--- Select a category ---</option>
+                    <option placeholder="Select a category">--- Select a category ---</option>
                     {categories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
                 </select>
             </form>

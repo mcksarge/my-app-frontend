@@ -75,3 +75,17 @@ button {
   color: yellow;
   font-size: 20px;
 }
+
+.task-list-person {
+  list-style: none;
+  color: yellowgreen;
+  font-size: 20px;
+}
+
+.complete-delete-cont {
+  background-color:burlywood;
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}

@@ -69,13 +69,19 @@ function App() {
     setRefTask(true)
   }
 /**************************************************** */
+
+//Passed down as prop to TaskCard to update after assigning person
+function handleAssignPerson(){
+  setRefPeople(true)
+}
+/********************************** */
   
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>What To Do...</h1>
-        <List tasks={taskData} categories={categoryData} people={peopleData} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} />
+        <List tasks={taskData} categories={categoryData} people={peopleData} onAssignPerson={handleAssignPerson} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} />
       </header>
     </div>
   );
