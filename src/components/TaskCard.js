@@ -1,11 +1,10 @@
 import {useState} from 'react';
 
 function ToDo({task, onDeleteTask, people, categories, assignPerson}){
-    const [formData, setFormData] = useState({person: ""})
 
 
     function handleComplete(e){
-        console.log("You completed me!")
+        console.log("You complete me <3")
     }
 
 
@@ -37,23 +36,25 @@ function ToDo({task, onDeleteTask, people, categories, assignPerson}){
             person = people[i].name
         }
     }
+
     /****************************** */
 
     //Handles selection change for person assigned to task
     function handleAssign(e){
-        setFormData(e.target.value)
         
-        fetch('http://localhost:9292/tasks/:id', {
+        fetch(`http://localhost:9292/tasks/${task.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                person_id: formData.person
+                person_id: e.target.value
             })
         })
-        .then(res => res.json())
-        .then((assignedPerson) => assignPerson(assignedPerson))
+            .then(res => res.json())
+            .then(() => {
+                assignPerson()
+            })
     }
     /****************** */
 
@@ -63,7 +64,7 @@ function ToDo({task, onDeleteTask, people, categories, assignPerson}){
             <li class="task-list-item">{task.name}</li>
             <li class="task-list-category">Category: {catName}</li>
             <li class="task-list-person">Assigned To: {person}</li>
-            {people.map((person) => <button class="person-selecter-button"  onClick={handleAssign} key={person.id} value={person.id}>{person.name}</button>)}
+            {people.map((person) => <button class="person-selecter-button" name="person" onClick={handleAssign} key={person.id} value={person.id}>{person.name}</button>)}
             <br></br>
             <div class="complete-delete-cont">
                 <button class="complete-btn" onClick={handleComplete}>Complete</button>
