@@ -53,7 +53,6 @@ function App() {
 
   //Passed down as prop to AddToDo to update state after task creation
   function handleAddTask(newTask){
-    console.log(`You added the following task: ${newTask}`)
     const updatedTasks = [...taskData, newTask]
     setTaskData(updatedTasks)
     setRefTask(true)
@@ -75,13 +74,29 @@ function handleUpdatePerson(){
   setRefTask(true)
 }
 /********************************** */
+
+//Handles new person request
+function handleAddPerson(newPerson){
+  let newPeople = [...peopleData, newPerson]
+  setPeopleData(newPeople)
+  setRefPeople(true)
+  console.log(`${newPerson} From APP`)
+}
+/*************************** */
   
+//Handles deleting a person from list
+function handleDeletePerson(deletedPerson){
+  const newPeople = peopleData.filter((person) => person.id !== deletedPerson)
+  setPeopleData(newPeople)
+  setRefPeople(true)
+}
+/******************* */
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>What To Do...</h1>
-        <List tasks={taskData} categories={categoryData} people={peopleData} assignPerson={handleUpdatePerson} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} />
+        <List tasks={taskData} categories={categoryData} people={peopleData} assignPerson={handleUpdatePerson} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} addPerson={handleAddPerson} deletePerson={handleDeletePerson} />
       </header>
     </div>
   );

@@ -93,3 +93,22 @@ button {
 .person-select {
   margin-left: 10px;
 }
+
+#person-container {
+  list-style: none;
+}
+
+.person {
+  display: inline;
+  justify-content: center;
+  height: 50px;
+  margin: 10px;
+}
+
+#submit-person {
+  margin-left: 10px;
+}
+
+#new-person-input {
+  width: 50%;
+}

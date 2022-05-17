@@ -33,7 +33,6 @@ function AddToDo({onAddTask, categories, people}) {
             ...formData,
             [e.target.name]: e.target.value
         })
-        console.log(formData)
     }
     /******************************** */
 
