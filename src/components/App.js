@@ -63,7 +63,6 @@ function App() {
   //Passed down as prop to TaskCard to update state after task deletion
   function handleDeleteTask(deletedTask){
     const updatedTasks = taskData.filter((task) => task.id !== deletedTask)
-    console.log("delete triggered")
     setTaskData(updatedTasks)
     setRefTask(true)
   }
@@ -80,7 +79,6 @@ function handleAddPerson(newPerson){
   let newPeople = [...peopleData, newPerson]
   setPeopleData(newPeople)
   setRefPeople(true)
-  console.log(`${newPerson} From APP`)
 }
 /*************************** */
   
@@ -92,10 +90,11 @@ function handleDeletePerson(deletedPerson){
 }
 /******************* */
 
+//Handles the sort functionality
 function handleSort(sortedTasks){
   setTaskData(sortedTasks)
 }
-
+/**************************** */
 
 
   return (

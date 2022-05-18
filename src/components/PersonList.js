@@ -4,10 +4,13 @@ import PersonCard from './PersonCard'
 function PersonList({people, addPerson, deletePerson}) {
     const [newPerson, setNewPerson] = useState("")
 
+    //Handles changes to form
     function handleChange(e) {
         setNewPerson(e.target.value)
     }
+    /************************* */
 
+    //Handles submit form functionality
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -24,9 +27,9 @@ function PersonList({people, addPerson, deletePerson}) {
             .then((newName) => {
                 addPerson(newName)
                 setNewPerson("")
-                console.log(newName)
             })
     }
+    /************************************** */
     
     return (
         <div id="person-container">

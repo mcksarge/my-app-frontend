@@ -1,3 +1,4 @@
+/* App */
 .App {
   text-align: center;
 }
@@ -13,9 +14,20 @@
   color: white;
 }
 
+button {
+  margin-right: 10px;
+}
+/******************************/
+
+/* Task elements */
 .task-list-item {
   list-style: none;
   font-size: 30px;
+}
+
+#task-list {
+  width: 50%;
+  margin: auto;
 }
 
 #list-container {
@@ -25,22 +37,6 @@
 .list-title {
   background-color: #F66B0E;
   border-radius: 20px;
-}
-
-#task-list {
-  width: 50%;
-  margin: auto;
-}
-
-button {
-  margin-right: 10px;
-}
-
-#add-todo {
-  background-color: aqua;
-  border-radius: 20px;
-  width: 80%;
-  margin: auto;
 }
 
 #new-task-title {
@@ -57,19 +53,6 @@ button {
   margin-right: 5px;
 }
 
-.assigned-to {
-  margin-right: 10px;
-}
-
-.complete-btn {
-  margin-left: 10px;
-}
-
-.category-select {
-  margin-bottom: 10px;
-  display: flexbox;
-}
-
 .task-list-category {
   list-style: none;
   color: yellow;
@@ -82,13 +65,28 @@ button {
   font-size: 20px;
 }
 
-.complete-delete-cont {
+.category-select {
+  margin-bottom: 10px;
+  display: flexbox;
+}
+
+.delete-cont {
   background-color:burlywood;
   width: 60%;
   margin: auto;
   margin-top: 10px;
   padding-bottom: 10px;
 }
+
+#add-todo {
+  background-color: aqua;
+  border-radius: 20px;
+  width: 80%;
+  margin: auto;
+}
+/*******************************************/
+
+/* People elements */
 
 .person-select {
   margin-left: 10px;
@@ -114,3 +112,19 @@ button {
 #new-person-input {
   width: 50%;
 }
+/********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

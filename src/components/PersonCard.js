@@ -2,8 +2,8 @@ import {useState} from 'react'
 
 function PersonCard({person, deletePerson}) {
 
+//Handles the delete function for People
     function handleDelete(){
-        
         fetch(`http://localhost:9292/people/${person.id}`, {
             method: "DELETE"
         })
@@ -12,6 +12,7 @@ function PersonCard({person, deletePerson}) {
                 deletePerson(deletedPerson)
             })
     }
+/********************************* */
     
     return (
         <div id="person-card-container">

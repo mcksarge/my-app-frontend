@@ -2,7 +2,7 @@ import TaskCard from './TaskCard';
 
 function Task({tasks, onDeleteTask, people, categories, assignPerson, onSort}){
 
-    
+    //Maps task data and passes keys and values as props to TaskCard component
     let allTasks = tasks.map((task, i) => {
         return (
             <TaskCard 
@@ -14,9 +14,10 @@ function Task({tasks, onDeleteTask, people, categories, assignPerson, onSort}){
             assignPerson={assignPerson}
         />
         )
-
     })
+    /*************************************************** */
 
+    //Grabs the sorted data from API server
     function handleNameSort(){
         fetch("http://localhost:9292/tasks/alpha")
             .then(res => res.json())
@@ -28,6 +29,7 @@ function Task({tasks, onDeleteTask, people, categories, assignPerson, onSort}){
         .then(res => res.json())
         .then(sortedTasks => onSort(sortedTasks))
     }
+    /******************************************* */
     
     return (
         <div id="task-list">

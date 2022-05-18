@@ -61,7 +61,7 @@ function ToDo({task, onDeleteTask, people, categories, assignPerson}){
             <li class="task-list-person">Assigned To: {person}</li>
             {people.map((person) => <button class="person-selecter-button" name="person" onClick={handleAssign} key={person.id} value={person.id}>{person.name}</button>)}
             <br></br>
-            <div class="complete-delete-cont">
+            <div class="delete-cont">
                 <button class="delete-btn" onClick={handleDelete}>Done</button>
             </div>
             <hr></hr>
