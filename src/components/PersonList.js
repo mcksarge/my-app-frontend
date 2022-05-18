@@ -38,7 +38,7 @@ function PersonList({people, addPerson, deletePerson}) {
             <ul id="person-container">
                 {people.map((person) => {
                     return(
-                        <PersonCard person={person} deletePerson={deletePerson} />
+                        <PersonCard person={person} deletePerson={deletePerson} key={person.id} />
                     )
                 }
                 )}
