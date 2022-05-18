@@ -14,7 +14,7 @@ function PersonCard({person, deletePerson}) {
     }
     
     return (
-        <div id="person-container">
+        <div id="person-card-container">
             <div>
                 <li class="person" key={person.id} value={person.id}>{person.name}</li>
                 <button class="delete-person" onClick={handleDelete}>X</button>

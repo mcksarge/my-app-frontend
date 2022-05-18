@@ -35,7 +35,7 @@ function PersonList({people, addPerson, deletePerson}) {
                 <input id="new-person-input" type="text" placeholder="Add new person..." value={newPerson} onChange={handleChange}></input>
                 <input id="submit-person" type="submit" value="submit"></input>
             </form>
-            <ul id="person-container">
+            <ul id="person-ul-container">
                 {people.map((person) => {
                     return(
                         <PersonCard person={person} deletePerson={deletePerson} key={person.id} />

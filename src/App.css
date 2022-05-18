@@ -94,8 +94,10 @@ button {
   margin-left: 10px;
 }
 
-#person-container {
+#person-ul-container {
   list-style: none;
+  font-size: 20px;
+  overflow: hidden;
 }
 
 .person {
