@@ -92,11 +92,17 @@ function handleDeletePerson(deletedPerson){
 }
 /******************* */
 
+function handleSort(sortedTasks){
+  setTaskData(sortedTasks)
+}
+
+
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>What To Do...</h1>
-        <List tasks={taskData} categories={categoryData} people={peopleData} assignPerson={handleUpdatePerson} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} addPerson={handleAddPerson} deletePerson={handleDeletePerson} />
+        <List tasks={taskData} categories={categoryData} people={peopleData} onSort={handleSort} assignPerson={handleUpdatePerson} onAddTask={handleAddTask} onDeleteTask={handleDeleteTask} addPerson={handleAddPerson} deletePerson={handleDeletePerson} />
       </header>
     </div>
   );

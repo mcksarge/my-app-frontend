@@ -3,11 +3,6 @@
 function ToDo({task, onDeleteTask, people, categories, assignPerson}){
 
 
-    function handleComplete(e){
-        console.log("You complete me <3")
-    }
-
-
     //Handles the delete function for tasks
     function handleDelete(){
         fetch(`http://localhost:9292/tasks/${task.id}`, {
@@ -67,8 +62,7 @@ function ToDo({task, onDeleteTask, people, categories, assignPerson}){
             {people.map((person) => <button class="person-selecter-button" name="person" onClick={handleAssign} key={person.id} value={person.id}>{person.name}</button>)}
             <br></br>
             <div class="complete-delete-cont">
-                <button class="complete-btn" onClick={handleComplete}>Complete</button>
-                <button class="delete-btn" onClick={handleDelete}>Delete</button>
+                <button class="delete-btn" onClick={handleDelete}>Done</button>
             </div>
             <hr></hr>
         </div>
